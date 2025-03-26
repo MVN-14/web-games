@@ -1,6 +1,6 @@
-const template = document.createElement("template");
+const gameContainerTemplate = document.createElement("template");
 
-template.innerHTML = `
+gameContainerTemplate.innerHTML = `
   <section>
     <h1>
       <slot name="title" />
@@ -32,6 +32,7 @@ template.innerHTML = `
         justify-content: center;
         font-size: clamp(1em, 5vw, 2em);
         margin-bottom: 6em;
+        padding: 1em;
       }
     }
   </style>
@@ -42,7 +43,7 @@ class GameContainer extends HTMLElement {
     super()
 
     const shadow = this.attachShadow({ mode: "open" });
-    shadow.append(template.content.cloneNode(true));
+    shadow.append(gameContainerTemplate.content.cloneNode(true));
   }
 }
 

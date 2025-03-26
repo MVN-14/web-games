@@ -1,0 +1,28 @@
+h2 {
+  font-size: 1em;
+}
+
+#gameboard {
+  --cell-width: 2em;
+  --border-style: solid 2px black;
+  padding-bottom: 0.75em;
+  font-size: 0.5em;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+
+    .cell {
+      width: var(--cell-width);
+      height: var(--cell-width);
+      border: var(--border-style);
+      margin: 0.025em;
+      font-size: 1em;
+
+      .letter {
+        font-size: 1.75em;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wordle</title>
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="wordle.css">
+  <script defer src="../components/GameContainer/GameContainer.js"></script>
+  <script defer src="../components/Nav/Nav.js"></script>
+  <script defer src="components/Keyboard.js"></script>
+  <script defer src="wordlist.js"></script>
+  <script defer src="wordle.js"></script>
+</head>
+
+<body>
+  <wg-nav></wg-nav>
+
+  <wg-game-container>
+    <span slot="title">Wordle</span>
+
+    <div slot="container">
+      <h2 id="message">Fetching word...</h2>
+      <div id="gameboard">
+        <div class="row" id="row-1">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row-2">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row-3">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row-4">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row-5">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+
+        <div class="row" id="row-6">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+      </div>
+
+      <wg-keyboard></wg-keyboard>
+
+    </div>
+  </wg-game-container>
+</body>
+
+</html>
