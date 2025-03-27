@@ -72,6 +72,9 @@ function testWord(word) {
 function colorCell(cellIdx, color) {
   const cells = getCurrentRow().children;
   cells[cellIdx].style.background = color;
+  if (color === "grey") {
+    cells[cellIdx].children[0].style.color = "lightgray";
+  }
 }
 
 function getWordFromCurrentRow() {
