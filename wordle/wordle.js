@@ -49,7 +49,7 @@ function handleKeyPress(e) {
 
 function testWord(word) {
   if (correctWord === word) {
-    for (let i of rowLength) {
+    for (let i = 0; i < rowLength; ++i) {
       colorCell(i, "green");
     };
     updateMessage(`You Won in ${currentRow} guesses!`);
