@@ -6,7 +6,7 @@ keyboard.addEventListener("wg-keyboard-key-pressed", handleKeyPress)
 
 const wordList = new WordList();
 const correctWord = wordList.getRandomWord();
-updateMessage("");
+updateMessage("Welcome to wordle!");
 
 const rowLength = 5;
 let currentRow = 1;
