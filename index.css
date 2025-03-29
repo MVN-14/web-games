@@ -1,0 +1,40 @@
+#container {
+  text-align: center;
+
+  #title {
+    font-size: 3em;
+    padding-top: 1em;
+  }
+
+  #game-list {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      padding: 0.2em;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      background: white;
+      padding: 0.5em;
+      width: 150px;
+      margin: auto;
+      color: #1f1f1f;
+      font-weight: bold;
+    }
+
+    a:hover {
+      cursor: pointer;
+      background: grey;
+    }
+  }
+
+  #description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.5em;
+  }
+}

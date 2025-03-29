@@ -6,13 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Web Games</title>
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="index.css">
   <script defer src="components/Nav/Nav.js"></script>
 </head>
 
 <body>
   <wg-nav></wg-nav>
-  <h1>Web Games</h1>
-  <a href="/tic-tac-toe">Tic Tac Toe</a>
+  <div id="container">
+    <h1 id="title">Web Games</h1>
+    <ul id="game-list">
+      <li>
+        <a href="/tic-tac-toe">Tic Tac Toe</a>
+      </li>
+      <li>
+        <a href="/wordle">Wordle</a>
+      </li>
+    </ul>
+
+    <p id="description"><br><br>
+      These web games were written with pure html, css, and java script
+      to learn web components and learn more about the bare bones of java script</p>
+  </div>
 </body>
 
 </html>
