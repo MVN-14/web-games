@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/tic-tac-toe/tic-tac-toe.css">
   <script defer src="/components/Nav/Nav.js"></script>
   <script defer src="/components/GameContainer/GameContainer.js"></script>
+  <script defer src="/components/ToolTip/ToolTip.js"></script>
   <script defer src="/tic-tac-toe/tic-tac-toe.js"></script>
 
 </head>
@@ -16,7 +17,24 @@
 <body>
   <wg-nav></wg-nav>
   <wg-game-container>
-    <span slot="title">Tic Tac Toe</span>
+    <span slot="title">
+      Tic Tac Toe
+      <wg-tool-tip>
+        <h1>Tic Tac Toe Rules</h1>
+        <ul>
+          <li>Player "X" goes first</li>
+          <li>Players "X" and "O" take turns placing their peices on the gameboard</li>
+          <li>
+            A player wins by geting three of their pieces in a row
+            (horizontally, vertically, or diagonally) before the otherplayer
+          </li>
+          <li>
+            If no player successfully places three peices in a row
+            and the game board is full it is concifered a tie
+          </li>
+        </ul>
+      </wg-tool-tip>
+    </span>
 
     <div slot="container">
       <div>

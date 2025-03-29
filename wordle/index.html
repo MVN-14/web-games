@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/global.css">
   <link rel="stylesheet" href="/wordle/wordle.css">
   <script defer src="/components/GameContainer/GameContainer.js"></script>
+  <script defer src="/components/ToolTip/ToolTip.js"></script>
   <script defer src="/components/Nav/Nav.js"></script>
   <script defer src="/wordle/components/Keyboard.js"></script>
   <script defer src="/wordle/wordlist.js"></script>
@@ -18,7 +19,22 @@
   <wg-nav></wg-nav>
 
   <wg-game-container>
-    <span slot="title">Wordle</span>
+    <span slot="title">Wordle
+      <wg-tool-tip>
+        <h1>Wordle Rules</h1>
+        <ul>
+          <li> You have to guess the Wordle in six goes or less</li>
+          <li>
+            Every word you enter must be in the word list. There are 2,309 words in this list
+          </li>
+          <li>A correct letter turns green</li>
+          <li>A correct letter in the wrong place turns yellow</li>
+          <li>An incorrect letter stays gray</li>
+          <li>Letters can be used more than once</li>
+          <li>Answers are never plurals</li>
+        </ul>
+      </wg-tool-tip>
+    </span>
 
     <div slot="container">
       <h2 id="message">Fetching word...</h2>
