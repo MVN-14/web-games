@@ -1,12 +1,17 @@
 const backspaceChar = "⇽";
-const buttonValues = [
-  "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "ENTER", "Z", "X", "C", "V", "B", "N", "M", backspaceChar
-];
+const buttonValues = {
+  row1: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+  row2: ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+  row3: ["ENTER", "Z", "X", "C", "V", "B", "N", "M", backspaceChar]
+};
 
 
 const keyboardTemplate = document.createElement("template")
 keyboardTemplate.innerHTML = `
   <div>
+    <span id="row1"></span>
+    <span id="row2"></span>
+    <span id="row3"></span>
   </div>
 
   <style>
@@ -20,6 +25,10 @@ keyboardTemplate.innerHTML = `
       font-size: 0.4em;
       font-weight: bold;
     }
+
+    span {
+      display: block;
+    }
     
 .disabled {
   background: light-grey;
@@ -28,13 +37,25 @@ keyboardTemplate.innerHTML = `
   </style>
 `
 
-buttonValues.forEach((v) => {
+let rows = ["row1", "row2", "row3"]
+rows.forEach(row => {
+  buttonValues[row].forEach(v => {
+    const button = document.createElement("button");
+    button.innerText = v;
+    keyboardTemplate.content.getElementById(row).append(button);
+  })
+});
+
+/*
+buttonValues.row1.forEach((v) => {
   const button = document.createElement("button");
   button.innerText = v;
 
-  keyboardTemplate.content.querySelector("div").append(button);
+  if (v <= "P") {
+    keyboardTemplate.content.getElementById("row-1").append(button);
+  }
 })
-
+*/
 
 class Keyboard extends HTMLElement {
   constructor() {
@@ -46,8 +67,7 @@ class Keyboard extends HTMLElement {
     })
 
     document.addEventListener("keyup", (e) => {
-      console.log(e.key);
-      if (!buttonValues.includes(e.key.toUpperCase()) && e.key !== "Backspace") {
+      if (!getButtonValues().includes(e.key.toUpperCase()) && e.key !== "Backspace") {
         return;
       }
 
@@ -88,5 +108,9 @@ class Keyboard extends HTMLElement {
     return this.dispatchEvent(keyPressedEvent);
   }
 }
+
+const getButtonValues = () => {
+  return [...buttonValues.row1, ...buttonValues.row2, ...buttonValues.row3];
+};
 
 customElements.define("wg-keyboard", Keyboard);
