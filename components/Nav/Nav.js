@@ -12,6 +12,9 @@ navTemplate.innerHTML = `
     <a href="/wordle" ${path.includes("wordle") ? 'class="selected"' : ''}]>
       Wordle
     </a>
+    <a href="/snake" ${path.includes("snake") ? 'class="selected"' : ''}]>
+      Snake
+    </a>
   </nav>
 
   <style>
