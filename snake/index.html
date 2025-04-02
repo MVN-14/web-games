@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/snake/favicon.ico">
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/snake/snake.css">
+  <script src="/components/Nav/Nav.js"></script>
+  <script src="/components/GameContainer/GameContainer.js"></script>
+  <script defer src="/snake/snake.js"></script>
+  <title>Snake</title>
+</head>
+
+<body>
+  <wg-nav></wg-nav>
+  <wg-game-container>
+    <span slot="title">Snake</span>
+    <div id="top-bar">
+      <button id="start-btn">Start Game</button>
+      <p id="score-label">Score: <span id="score">0</span></p>
+    </div>
+    <canvas id="canvas" slot="canvas"></canvas>
+  </wg-game-container>
+</body>
+
+</html>
