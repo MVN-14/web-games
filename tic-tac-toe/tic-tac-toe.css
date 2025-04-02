@@ -4,7 +4,7 @@
 }
 
 #game-board {
-  --cell-size: 1.5em;
+  --cell-size: 1.2em;
   --border-style: solid 5px black;
 
   display: grid;
@@ -48,7 +48,7 @@
 #restart {
   background-color: white;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.7em;
   padding: 0.5em;
   margin-top: 2em;
   border: solid black 2px;
