@@ -18,24 +18,34 @@ navTemplate.innerHTML = `
   </nav>
 
   <style>
-  nav {
-    display: flex;
-    gap: 10px;
-    background-color: #ffffff;
-    height: max-content;
-  }
+    nav {
+      display: flex;
+      gap: 10px;
+      background-color: #ffffff;
+      height: max-content;
+      overflow-x: auto;
   
-  a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #1f1f1f;
-    font-weight: bold;
-    padding: 0.5rem;
-  }
-
-  .selected {
-    background-color: grey;
-  }
+      a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #1f1f1f;
+        font-weight: bold;
+        padding: 0.5rem;
+        text-wrap: nowrap;
+      }
+    }
+  
+    @media only screen and (max-width: 600px) {
+      nav {
+        a {
+          font-size: 1em;
+        }
+      }
+    }
+  
+    .selected {
+      background-color: grey;
+    }
   </style>
 `
 
