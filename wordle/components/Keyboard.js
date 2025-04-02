@@ -16,7 +16,7 @@ keyboardTemplate.innerHTML = `
 
   <style>
     div {
-      width: clamp(380px, 12.5em, 12.5em);
+      width: clamp(300px, 12.5em, 12.5em);
       margin: 0 auto;
     }
 
