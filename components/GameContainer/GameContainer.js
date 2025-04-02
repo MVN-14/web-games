@@ -5,9 +5,10 @@ gameContainerTemplate.innerHTML = `
     <h1>
       <slot name="title" />
     </h1>
-
-    <div>
-      <slot name="container" />
+    <slot></slot>
+    <div id="wrapper">
+      <slot name="container"></slot>
+      <slot name="canvas"></slot>
     </div>
   </section>
 
@@ -18,23 +19,40 @@ gameContainerTemplate.innerHTML = `
 
       h1 {
         font-size: 2.5rem;
-        padding-top: 2.5rem;
       }
 
-      div {
-        background: grey;
-        width: 100%;
-        max-width: 1000px;
+      #wrapper {
         margin: 0 auto;
-        min-height: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: clamp(1em, 5vw, 2em);
-        margin-bottom: 6em;
-        padding: 1em;
+        margin-bottom: 2em;
+        
+        slot[name="container"]::slotted(*) {
+          width: 100%;
+          max-width: 800px;
+          background: grey;
+          padding: 1em;
+        }
+
+        slot[name="canvas"]::slotted(*) {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+        }
       }
-    }
+
+      @media only screen and (max-width: 600px) {
+        h1 {
+          font-size: 1.5em;
+        }
+
+        slot[name="container"]::slotted(*) {
+          padding: 1em 0 !important;
+        }
+      }
+}
   </style>
 `;
 
